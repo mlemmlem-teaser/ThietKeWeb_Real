@@ -1,0 +1,32 @@
+# Car Management System - Image Placeholders
+
+This directory contains placeholder images for the Car Management System.
+
+## Available Placeholders:
+
+### Car Images
+- car-1.jpg - Sample car image 1
+- car-2.jpg - Sample car image 2  
+- car-3.jpg - Sample car image 3
+- car-4.jpg - Sample car image 4
+
+### User Avatars
+- user-avatar-1.jpg - Default user avatar
+- user-avatar-2.jpg - Admin avatar
+
+### Icons
+- logo.png - Company logo
+- favicon.ico - Website favicon
+
+## Usage:
+All images use fallback SVG placeholders when the actual image files are not available.
+The system automatically generates appropriate placeholder images based on the context.
+
+## Image Specifications:
+- Car images: 400x300px minimum
+- User avatars: 100x100px
+- Logo: 200x80px
+- Icons: 32x32px
+
+## Note:
+Replace these placeholder references with actual image files for production use.

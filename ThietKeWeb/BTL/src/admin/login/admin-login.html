@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Car Management</title>
+    <link rel="stylesheet" href="../../../bootstrap-css.css">
+    <link rel="stylesheet" href="../../../global-style.css">
+    <link rel="stylesheet" href="admin-login.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="site-header"></div>
+    
+    <!-- Main Content -->
+    <main class="site-main">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h1>🔐 Admin Login</h1>
+                        <p>Sign in to your Administrator account</p>
+                    </div>
+                    
+                    <form id="adminLoginForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email or Username</label>
+                            <input type="text" id="email" name="email" class="form-input" placeholder="Enter your admin email or username" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" name="password" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary auth-btn">
+                                Login to Dashboard
+                            </button>
+                        </div>
+                        
+                        <div class="auth-links">
+                            <p>Not an admin? 
+                                <a href="../../client/login-register/login.html" class="auth-link">User Login</a>
+                            </p>
+                            <p>
+                                <a href="../../../index.html" class="auth-link">← Back to Home</a>
+                            </p>
+                        </div>
+                    </form>
+                    
+                    <!-- Error/Success Messages -->
+                    <div id="message" class="message"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <div id="site-footer"></div>
+    
+    <!-- Scripts -->
+    <script type="module" src="admin-login.js"></script>
+    <script src="../../client/components/components.js"></script>
+</body>
+</html>

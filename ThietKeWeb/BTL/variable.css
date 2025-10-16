@@ -1,0 +1,43 @@
+:root {
+	/* Black/White High Contrast Theme */
+	--color-bg: #ffffff;
+	--color-bg-dark: #000000;
+	--color-background: #f8f9fa;
+	--color-white: #ffffff;
+	--color-text: #000000;
+	--color-text-light: #ffffff;
+	--color-text-secondary: #666666;
+	--color-primary: #000000;
+	--color-primary-light: #f0f0f0;
+	--color-primary-dark: #333333;
+	--color-secondary: #333333;
+	--color-muted: #666666;
+	--color-border: #cccccc;
+	--color-border-light: #e9ecef;
+	--color-border-dark: #333333;
+	--color-success: #000000;
+	--color-error: #dc3545;
+	--color-warning: #333333;
+	
+	/* Layout */
+	--container-max: 1200px;
+	--spacing-1: 4px;
+	--spacing-2: 8px;
+	--spacing-3: 12px;
+	--spacing-4: 16px;
+	--spacing-6: 24px;
+	--spacing-8: 32px;
+	--spacing-12: 48px;
+	--radius: 4px;
+	--radius-lg: 8px;
+	--border-radius-sm: 4px;
+	
+	/* Shadows */
+	--shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+	--shadow-md: 0 4px 6px rgba(0,0,0,0.3);
+	--shadow-lg: 0 10px 15px rgba(0,0,0,0.4);
+	
+	/* Transitions */
+	--transition: all 0.2s ease;
+}
+

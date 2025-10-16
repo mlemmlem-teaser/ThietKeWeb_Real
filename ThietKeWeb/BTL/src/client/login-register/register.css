@@ -1,0 +1,141 @@
+/* Register Page Styles */
+/* Specific styles for the register page */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: var(--spacing-8) 0;
+}
+
+.auth-card {
+    background: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-8);
+    width: 100%;
+    max-width: 500px;
+    box-shadow: var(--shadow-md);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: var(--spacing-8);
+}
+
+.auth-header h1 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-3);
+    font-size: 2rem;
+}
+
+.auth-header p {
+    color: var(--color-muted);
+    font-size: 1rem;
+}
+
+.auth-form {
+    width: 100%;
+}
+
+/* Form Row for side-by-side inputs */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-6);
+}
+
+.auth-btn {
+    width: 100%;
+    padding: var(--spacing-4);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-4);
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: var(--spacing-6);
+}
+
+.auth-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+/* Message Styles */
+.message {
+    margin-top: var(--spacing-4);
+    padding: var(--spacing-3);
+    border-radius: var(--radius);
+    text-align: center;
+    font-weight: 500;
+    display: none;
+}
+
+.message.success {
+    background: var(--color-bg);
+    color: var(--color-success);
+    border: 2px solid var(--color-success);
+    display: block;
+}
+
+.message.error {
+    background: var(--color-bg);
+    color: var(--color-error);
+    border: 2px solid var(--color-error);
+    display: block;
+}
+
+/* Loading State */
+.auth-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Select Input Styles */
+.form-input select {
+    background: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--spacing-3);
+    font-size: 1rem;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.form-input select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .auth-card {
+        margin: var(--spacing-4);
+        padding: var(--spacing-6);
+    }
+    
+    .auth-header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        margin: var(--spacing-2);
+        padding: var(--spacing-4);
+    }
+}

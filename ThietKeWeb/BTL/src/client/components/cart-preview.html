@@ -1,0 +1,38 @@
+<!-- Cart Preview Component -->
+<div id="cartPreview" class="cart-preview">
+    <div class="cart-header">
+        <h3>🛒 Shopping Cart</h3>
+        <button class="cart-close" onclick="closeCartPreview()">&times;</button>
+    </div>
+
+    <div class="cart-content">
+        <div id="cartItems" class="cart-items">
+            <!-- Cart items will be loaded here -->
+        </div>
+        
+        <div class="cart-empty" id="cartEmpty" style="display: none;">
+            <div class="empty-icon">🛒</div>
+            <p>Your cart is empty</p>
+            <button class="btn btn-primary" onclick="closeCartPreview()">Continue Shopping</button>
+        </div>
+    </div>
+    
+    <div class="cart-footer" id="cartFooter">
+        <div class="cart-total">
+            <div class="total-row">
+                <span>Total Items: <strong id="cartTotalItems">0</strong></span>
+            </div>
+            <div class="total-row">
+                <span>Total Price: <strong id="cartTotalPrice">$0.00</strong></span>
+            </div>
+        </div>
+        
+        <div class="cart-actions">
+            <button class="btn btn-link" onclick="clearCart()">Clear Cart</button>
+            <button class="btn btn-primary" onclick="proceedToCheckout()">Checkout</button>
+        </div>
+    </div>
+</div>
+
+<!-- Cart Overlay -->
+<div id="cartOverlay" class="cart-overlay" onclick="closeCartPreview()"></div>

@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /users/{userId} {
+      allow read: if true; 
+
+      allow create, update, delete: if
+        request.auth != null
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.status.role == "admin"
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.status.active == true;
+    }
+
+    match /cars/{carId} {
+      allow read: if true;
+      
+      allow create, update, delete: if
+        request.auth != null
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.status.role == "admin"
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.status.active == true;
+    }
+
+  }
+}

@@ -1,0 +1,7 @@
+.team-grid {
+    display: flex;
+    justify-self: space-around;
+}
+.team-grid .team-member img {
+    width: 80%;
+}

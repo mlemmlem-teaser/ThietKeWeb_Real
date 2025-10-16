@@ -1,0 +1,232 @@
+/* Service Page Styles */
+
+.page-header {
+    text-align: center;
+    margin-bottom: var(--spacing-8);
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-2);
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: var(--color-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Announcement Banner */
+.announcement-banner {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    border-radius: var(--border-radius);
+    padding: var(--spacing-6);
+    margin-bottom: var(--spacing-8);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.announcement-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.announcement-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.announcement-text {
+    flex: 1;
+}
+
+.announcement-text h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-2);
+}
+
+.announcement-text p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.announcement-action {
+    flex-shrink: 0;
+}
+
+.announcement-action .btn {
+    background: white;
+    color: var(--color-primary);
+    border: none;
+    font-weight: 600;
+}
+
+.announcement-action .btn:hover {
+    background: var(--color-background);
+    transform: translateY(-2px);
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-6);
+    margin-bottom: var(--spacing-8);
+}
+
+.service-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-6);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-3);
+}
+
+.service-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-2);
+}
+
+.service-content p {
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-3);
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-features li {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-1);
+    font-size: 0.9rem;
+}
+
+.service-features li:last-child {
+    margin-bottom: 0;
+}
+
+/* Call to Action Section */
+.cta-section {
+    background: var(--color-background);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-8);
+    text-align: center;
+    margin-bottom: var(--spacing-8);
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-2);
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    color: var(--color-muted);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-4);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--spacing-3);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+    padding: var(--spacing-3) var(--spacing-6);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .announcement-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-3);
+    }
+    
+    .announcement-icon {
+        font-size: 2.5rem;
+    }
+    
+    .announcement-text h2 {
+        font-size: 1.25rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+    }
+    
+    .service-card {
+        padding: var(--spacing-4);
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .cta-section {
+        padding: var(--spacing-6);
+    }
+    
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .announcement-banner {
+        padding: var(--spacing-4);
+    }
+    
+    .announcement-text h2 {
+        font-size: 1.1rem;
+    }
+    
+    .announcement-text p {
+        font-size: 0.9rem;
+    }
+    
+    .service-icon {
+        font-size: 2.5rem;
+    }
+}

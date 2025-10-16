@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Car Management</title>
+    <link rel="stylesheet" href="../../../bootstrap-css.css">
+    <link rel="stylesheet" href="../../../global-style.css">
+    <link rel="stylesheet" href="../components/admin-sidebar.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <a href="../../../Assets/image/temp.png"></a>
+    <!-- Admin Layout -->
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div id="admin-sidebar"></div>
+        
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <h1>📊 Dashboard</h1>
+                <p>Welcome to the Car Management Admin Panel</p>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🚗</div>
+                    <div class="stat-content">
+                        <h3 id="totalCars">0</h3>
+                        <p>Total Cars</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-content">
+                        <h3 id="totalUsers">0</h3>
+                        <p>Total Users</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">🔧</div>
+                    <div class="stat-content">
+                        <h3 id="totalAdmins">0</h3>
+                        <p>Total Admins</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-content">
+                        <h3 id="recentActivity">0</h3>
+                        <p>Recent Activity</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="action-buttons">
+                    <a href="manage-user/manage-user.html" class="action-btn">
+                        <span class="action-icon">👥</span>
+                        <span class="action-text">Manage Users</span>
+                    </a>
+                    
+                    <a href="manage-admin/manage-admin.html" class="action-btn">
+                        <span class="action-icon">🔧</span>
+                        <span class="action-text">Manage Admins</span>
+                    </a>
+                    
+                    <button class="action-btn" onclick="showAddCarModal()">
+                        <span class="action-icon">➕</span>
+                        <span class="action-text">Add New Car</span>
+                    </button>
+                    
+                    <button class="action-btn" onclick="refreshData()">
+                        <span class="action-icon">🔄</span>
+                        <span class="action-text">Refresh Data</span>
+                    </button>
+                    
+                    <button class="action-btn" onclick="showMigrationModal()">
+                        <span class="action-icon">📦</span>
+                        <span class="action-text">Migrate Cars</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Recent Cars Table -->
+            <div class="recent-cars">
+                <h2>Recent Cars</h2>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Make & Model</th>
+                                <th>Generation</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="carsTableBody">
+                            <!-- Cars will be loaded here -->
+                            <tr>
+                                <td>
+                                    <!-- imageholder -->
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA2MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xMCAyMEgxMFYzMEgxMFYyMFoiIGZpbGw9IiM5Q0EzQUYiLz4KPHBhdGggZD0iTTUwIDIwSDUwVjMwSDUwVjIwWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNMTUgMTBINDVWMzBIMTVWMTBaIiBmaWxsPSIjRjNGNEY2IiBzdHJva2U9IiM5Q0EzQUYiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSIzMCIgeT0iMjIiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI4IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DQVI8L3RleHQ+Cjwvc3ZnPgo=" alt="Car" class="car-thumbnail">
+                                </td>
+                                <td>Sample Car Data</td>
+                                <td>2024</td>
+                                <td>$25,000</td>
+                                <td><span class="status-badge status-available">Available</span></td>
+                                <td>
+                                    <button class="btn btn-link btn-small">View</button>
+                                    <button class="btn btn-link btn-small">Edit</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Add Car Modal -->
+    <div id="addCarModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Car</h2>
+                <span class="close" onclick="closeAddCarModal()">&times;</span>
+            </div>
+            
+            <form id="addCarForm" class="modal-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="carMake" class="form-label">Make</label>
+                        <input type="text" id="carMake" name="make" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="carModel" class="form-label">Model</label>
+                        <input type="text" id="carModel" name="model" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="carYear" class="form-label">Year</label>
+                        <input type="number" id="carYear" name="year" class="form-input" min="1900" max="2024" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="carPrice" class="form-label">Price ($)</label>
+                        <input type="number" id="carPrice" name="price" class="form-input" min="0" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="carDescription" class="form-label">Description</label>
+                    <textarea id="carDescription" name="description" class="form-input" rows="3"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="carStatus" class="form-label">Status</label>
+                    <select id="carStatus" name="status" class="form-input" required>
+                        <option value="available">Available</option>
+                        <option value="sold">Sold</option>
+                        <option value="maintenance">Maintenance</option>
+                    </select>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-link" onclick="closeAddCarModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Car</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Migration Modal -->
+    <div id="migrationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📦 Migrate Cars from API</h2>
+                <span class="close" onclick="closeMigrationModal()">&times;</span>
+            </div>
+            
+            <div class="modal-body">
+                <p>This will fetch all cars from the external API and add them to your Firestore database.</p>
+                <div id="migrationProgress" style="display: none;">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="migrationStatus">Starting migration...</p>
+                </div>
+                <div id="migrationResults" style="display: none;">
+                    <h3>Migration Results:</h3>
+                    <p id="migrationSummary"></p>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button type="button" class="btn btn-link" onclick="closeMigrationModal()">Cancel</button>
+                <button type="button" class="btn btn-primary" id="startMigrationBtn" onclick="startMigration()">Start Migration</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script type="module" src="../components/admin-sidebar.js"></script>
+    <script type="module" src="dashboard.js"></script>
+    <script src="../../client/components/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Car Management</title>
+    <link rel="stylesheet" href="../../../bootstrap-css.css">
+    <link rel="stylesheet" href="../../../global-style.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="site-header"></div>
+    
+    <!-- Main Content -->
+    <main class="site-main">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h1>🚗 Register</h1>
+                        <p>Create your Car Management account</p>
+                    </div>
+                    
+                    <form id="registerForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="fullname" class="form-label">Full Name</label>
+                            <input type="text" id="fullname" name="fullname" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" id="username" name="username" class="form-input" placeholder="Choose a unique username" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="avatar" class="form-label">Avatar URL (Optional)</label>
+                            <input type="url" id="avatar" name="avatar" class="form-input" placeholder="https://example.com/avatar.jpg">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" name="password" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="role" class="form-label">Account Type</label>
+                            <select id="role" name="role" class="form-input" required>
+                                <option value="user">Regular User</option>
+                            </select>
+                            <small style="color: var(--color-muted); font-size: 0.9rem;">
+                                Admin accounts can only be created by existing administrators.
+                            </small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary auth-btn">
+                                Create Account
+                            </button>
+                        </div>
+                        
+                        <div class="auth-links">
+                            <p>Already have an account? 
+                                <a href="login.html" class="auth-link">Login here</a>
+                            </p>
+                        </div>
+                    </form>
+                    
+                    <!-- Error/Success Messages -->
+                    <div id="message" class="message"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <div id="site-footer"></div>
+    
+    <!-- Scripts -->
+    <script type="module" src="register.js"></script>
+    <script src="../components/components.js"></script>
+</body>
+</html>
