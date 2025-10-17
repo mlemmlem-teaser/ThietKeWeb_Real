@@ -1,0 +1,13 @@
+{
+  "name": "xe-hoi-nho-deployment",
+  "version": "1.0.0",
+  "description": "Car dealership website deployment",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'",
+    "start": "echo 'Static site'"
+  },
+  "keywords": ["car", "dealership", "website", "static"],
+  "author": "Your Name",
+  "license": "MIT"
+}

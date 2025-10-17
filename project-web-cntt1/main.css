@@ -1,0 +1,485 @@
+main{
+    height: 3000px;}
+section{
+    padding:20px;
+}
+article{
+    margin-top:40px;
+    margin-left:50px;
+    margin-bottom:150px;
+}
+section>article>h1{
+    font-weight:700;
+    color:#bb0808;
+    text-align:center;
+    letter-spacing:15px;
+}
+.car_hot>div{
+    display:inline-block;
+    width:33%;
+    height:auto;
+    margin-top:10%;
+}
+.car_hot div img{
+    width:auto;
+    height:250px;
+    justify-items: space-between;
+    margin-bottom: 10px;
+}
+.car_hot div img:hover{
+    transform:scale(1.1);
+}
+.car_hot div .btn{
+    width:100px;
+    background-color:#e22424;
+    color:aliceblue;
+}
+.car_hot div .btn:hover{
+    background-color:rgb(147, 0, 0);
+    color:rgb(248, 248, 248);
+}
+.repulation{
+    margin-left:0px;
+    padding-left:0px;
+    padding-top:10px;
+    background-image:url("Assets/image/xepdep4.jpg");
+    height:550px;
+    width:auto;
+    background-repeat: no-repeat;   /* không lặp ảnh */
+    background-size: cover; /* phủ kín khung */
+    background-position: center;
+    position: relative;
+    display:flex;
+}
+form{
+    background-color:rgba(14, 14, 14, 0.768);
+    position:relative;
+    justify-content:space-between;
+    padding-top:3%;
+    height:430px;
+    width:650px;
+    border:15px solid transparent;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); 
+    z-index:1000;
+    margin-left:20px;
+    border-radius: 10px;
+    color:#ffffff;
+}
+form:hover{
+    background-color:rgba(14, 14, 14,1);
+}
+.form-group{
+    display:flex;
+    align-items: center;
+    margin-top:20px;
+}
+.form-group label{
+    width:110px;
+    height:30px;
+    flex-shrink: 0;
+}
+.form-group input{
+    border-radius: 10px;
+    width:500px;
+    height:30px;
+    border: none;
+}
+.form-group textarea{
+    border-radius: 10px;
+    width:500px;
+    height:80px;
+    border: none;
+}
+form h4{
+    font-weight:650;
+    margin-bottom:50px;
+}
+form button{
+    color:#ffffff!important;
+    background-color:#fa0000!important;
+    margin-top:30px;
+    margin-left:140px;
+    padding:30px;
+    width:170px;
+    height:40px;
+}
+form button:hover{
+    background-color:#b41b1b!important;
+}
+input::placeholder,textarea::placeholder{
+    padding-left:10px;
+    color:rgb(177, 183, 188); 
+}
+aside{
+    margin-left:90px;
+    width:700px;
+    height:auto;
+    z-index:1000;
+    display:flex;
+    gap: 20px;
+    color:#ffffff;
+}
+aside > div{
+    width: 450px;
+    height:95%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+aside img{
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+aside h4, aside p{
+    padding: 10px;
+    color: #000000;
+}
+aside h4{
+    text-align: center;
+    margin: 10px 0 5px 0;
+    font-size: 16px;
+}
+aside p{
+    margin-top:10px;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+}
+.social{
+    margin-left:40%;
+    margin-top:10%;
+    width:100%;
+    height:auto;
+    gap:50px;
+    align-items:center;
+    justify-items:auto;
+    text-align:auto;
+    z-index: 100000;
+}
+.fa-facebook {
+    font-size:30px;
+    color: rgb(32, 53, 192);
+    border-radius:50%;
+}
+/* Twitter */
+.fa-twitter {
+    font-size:30px;
+    color: rgb(81, 122, 217);
+}
+.fa-youtube {
+    font-size:30px;
+    color:#fa0000;
+}
+.best_choice >h2{
+    padding-top:30px;
+    font-weight:700;
+    text-align: center;
+    color:#b41b1b;
+}
+.best_choice{
+    width:100%;
+    height:700px;
+    background-image:url("Assets/image/uytin2.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    padding:0px;
+    margin:0px;
+    align-items:center;
+    justify-content: baseline;/*căn các phần tư theo  giống chữ*/ 
+    text-align:center;
+    position:relative;
+}
+.best_choice i {
+    position:relative;
+    font-size: 70px; /* Đặt kích thước lớn cho icon */
+    color: #e22424; /* Đặt màu đỏ như trong ảnh mẫu */
+    display: block; /* Đảm bảo icon chiếm một hàng riêng */
+    margin: 0 auto 10px auto; /* Căn giữa icon */
+    z-index:1000;
+}
+
+/* 2. Định dạng cho thẻ chứa nội dung */
+.best_choice > div {
+    position:relative;
+    background-color:#f7f7f8;
+    margin-top:70px;
+    padding: 20px;
+    width: 300px; /* Ví dụ: đặt chiều rộng cụ thể */
+    height:400px;
+    display:inline-block;
+    z-index:1000;
+    vertical-align: top; 
+    margin-right: 20px; 
+}
+.best_choice div:active{
+    transform:scale(1.2);
+    z-index:2000;
+}
+.best_choice div p{
+    text-align:start;
+}
+footer{
+    margin-top:200px;
+    width:100%;
+    height:600px;
+    color:#ffffff;
+    background-color:#000000;
+    display:flex;
+    text-align: center;
+    padding:30px;
+}
+footer>div{
+    width:45%;
+    height:auto;
+    margin-top:70px;
+     vertical-align: top; 
+}
+footer .contact-line {
+    display: flex!important;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+    justify-content: baseline;
+    text-align: center;
+    margin-left: 40px;
+}
+.small-text p {
+    font-size: 10px;
+}
+footer .legal a{
+    width:400px;
+    text-decoration:none;
+    color:#ffffff;
+    line-height:50px;
+}
+/* main.css */
+
+/* ... (phần code hiện tại của bạn) ... */
+
+/* Responsive cho mobile và tablet (<= 768px) */
+@media (min-width: 2500px) {  
+  /* KHU VỰC XE HOT */
+  .car_hot>div {
+    width: 45%; /* Xếp 2 xe mỗi hàng */
+    margin-top: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  section>article>h1 {
+    letter-spacing: 8px; /* Giảm khoảng cách chữ */
+    font-size: 24px;
+  }
+  .car_hot div img {
+    width:50%;
+    height:auto;;
+}
+  
+  /* KHU VỰC TƯ VẤN & CHUYÊN GIA */
+  .repulation {
+    flex-direction: column; /* Chuyển bố cục sang xếp dọc */
+    height: auto; /* Chiều cao tự động */
+    padding: 20px 0;
+  }
+  form {
+    margin: 20px auto; /* Căn giữa form */
+    width: 95%; /* Chiếm gần hết chiều rộng */
+    height: auto;
+    padding: 20px;
+  }
+  .form-group {
+    flex-direction: column; /* Label và input xếp chồng lên nhau */
+    align-items: flex-start;
+  }
+  .form-group label {
+    width: 100%; /* Chiếm full width */
+    height: auto;
+    margin-bottom: 5px;
+  }
+  .form-group input, .form-group textarea {
+    width: 100%; /* Chiếm full width */
+    box-sizing: border-box; /* Bao gồm padding và border trong width */
+  }
+  form button {
+    margin: 20px auto 10px auto; /* Căn giữa nút */
+    display: block;
+  }
+  aside {
+    flex-direction: row;
+    width: 95%;
+    margin: 20px auto;
+
+  }
+  aside > div {
+    flex-direction: row;
+    width: 100%; /* Mỗi chuyên gia chiếm full width */
+    height:99%;
+  }
+  aside>img{
+    height:100%;
+  }
+
+  /* KHU VỰC BEST CHOICE */
+  .best_choice {
+    height: auto;
+    padding-bottom: 30px;
+  }
+  .best_choice > div {
+    width: 90%; /* Mỗi khối chiếm full width */
+    height: auto;
+    margin: 20px auto;
+    display: block; /* Xếp chồng lên nhau */
+  }
+
+  /* FOOTER */
+  footer {
+    flex-direction: column; /* Footer xếp dọc */
+    height: auto;
+    padding: 10px;
+    text-align:left;
+  }
+  footer  div {
+    width: 100%; /* Mỗi cột chiếm full width */
+    margin-top: 30px;
+    justify-content:center;
+    text-align: center;
+    align-items: center;
+  }
+  footer .contact-line {
+    text-align:center;
+  }
+  footer div img{
+    width:10%;
+    height:auto;
+  }
+}
+/* Responsive cho điện thoại nhỏ (<= 480px) */
+@media (max-width: 1300px){
+  /* Khu vực xe hot */
+  article {
+    margin: 20px 0;
+  }
+  section>article>h1 {
+    font-size: 24px;
+    letter-spacing: 5px;
+  }
+  .car_hot>div {
+    width: 90%; 
+    display: block; /* Xếp chồng lên nhau */
+    margin: 20px auto;
+    text-align: center; /* Căn giữa nội dung trong mỗi div xe */
+  }
+  .car_hot div img {
+    width: 30%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+  }
+  .car_hot div .btn {
+      margin: 10px auto; /* Căn giữa nút */
+  }
+  
+  /* Khu vực Tư vấn & Chuyên gia (repulation) */
+  .repulation {
+    height: auto; /* Chiều cao tự động */
+    background-size: contain; /* Có thể dùng cover hoặc contain tùy theo ý muốn, nhưng contain sẽ tránh cắt ảnh */
+    background-position: top center;
+    flex-direction: column; /* Xếp chồng Form và Aside */
+    padding: 10px;
+    display: block;
+  }
+  form {
+    width: 95%; /* Chiếm gần hết chiều rộng */
+    height: auto;
+    margin: 20px auto; /* Căn giữa */
+    padding: 15px;
+    border: 5px solid transparent; /* Giảm độ dày border */
+  }
+  .form-group {
+    flex-direction: column; /* Label và input xếp chồng lên nhau */
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+  .form-group label {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+  }
+  .form-group input, .form-group textarea {
+    width: 100%; /* Chiếm full width */
+    box-sizing: border-box; 
+  }
+  form h4 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  form button {
+    margin: 10px auto 10px auto; /* Căn giữa nút */
+    display: block;
+    width: 150px;
+    padding: 15px;
+  }
+  
+  aside {
+    flex:1 1 50%; /* Chuyên gia xếp dọc */
+    width: 95%;
+    margin: 20px auto;
+    gap: 15px; /* Giảm khoảng cách giữa các khối chuyên gia */
+    display: flex; /* Giữ lại flex để stack */
+  }
+  aside > div {
+    width: 100%; /* Mỗi chuyên gia chiếm full width */
+    height: auto;
+    z-index:100000;
+  }
+
+  /* Khu vực Best Choice */
+  .best_choice {
+    height: auto;
+    padding-bottom: 30px;
+  }
+  .best_choice > div {
+    width: 90%; /* Mỗi khối chiếm full width */
+    height: auto;
+    margin: 20px auto;
+    display: block; /* Xếp chồng lên nhau */
+  }
+  .best_choice > h2 {
+      font-size: 24px;
+  }
+  .best_choice i {
+      font-size: 50px;
+  }
+  
+  /* Footer */
+  footer {
+    flex-direction: column; /* Footer xếp dọc */
+    height: auto;
+    padding: 10px 0;
+    margin-top: 50px;
+    text-align: left;
+  }
+  footer > div {
+    width: 95%; /* Mỗi cột chiếm gần full width */
+    margin: 20px auto;
+    text-align: left;
+  }
+  footer .contact-line {
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+  footer .legal a{
+    line-height:30px;
+   }
+  footer div img{
+    width:30%;
+    height:auto;
+  }
+}
