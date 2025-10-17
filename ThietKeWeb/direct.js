@@ -1,1 +1,0 @@
-window.location.href = "project-web-cntt1/index.html";
