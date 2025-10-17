@@ -1,1 +1,1 @@
-window.location.href = "../ThietKeWeb/project-web-cntt1/index.html";
+window.location.href = "project-web-cntt1/index.html";

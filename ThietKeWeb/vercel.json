@@ -1,7 +1,19 @@
 {
-  "version": 2,
-  "public": "ThietKeWeb/project-web-cntt1",
-  "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
-}
+    "version": 2,
+    "builds": [
+      {
+        "src": "index.html",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "ThietKeWeb/project-web-cntt1/**",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      { "src": "/", "dest": "/index.html" },
+      { "src": "/ThietKeWeb/project-web-cntt1/(.*)", "dest": "/ThietKeWeb/project-web-cntt1/$1" },
+      { "src": "/(.*)", "dest": "/ThietKeWeb/project-web-cntt1/$1" }
+    ]
+  }
+  
