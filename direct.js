@@ -1,1 +1,0 @@
-window.location.href = "../ThietKeWeb_Real/ThietKeWeb/project-web-cntt1/index.html";
