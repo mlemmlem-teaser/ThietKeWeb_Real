@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "public": "ThietKeWeb/project-web-cntt1",
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
