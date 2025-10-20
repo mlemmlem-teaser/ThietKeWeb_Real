@@ -23,7 +23,7 @@ async function loadCars() {
         carsGrid.innerHTML = '';
         
         // Show loading message
-        loadingMessage.innerHTML = '<p>🔄 Loading cars from database and API...</p>';
+        loadingMessage.innerHTML = '<p><i class="fa-solid fa-rotate"></i> Loading cars from database and API...</p>';
         
         const [fsResult, apiResult] = await Promise.all([
             getAllCars(),
@@ -69,7 +69,7 @@ async function loadCars() {
             applyFilters();
             
             // Update loading message
-            loadingMessage.innerHTML = `<p>✅ Loaded ${allCars.length} cars successfully!</p>`;
+            loadingMessage.innerHTML = `<p><i class="fa-solid fa-check"></i> Loaded ${allCars.length} cars successfully!</p>`;
             setTimeout(() => {
                 loadingMessage.style.display = 'none';
             }, 2000);
@@ -163,14 +163,36 @@ function createCarCard(car) {
     if (car.CarKilometers) details.push(`<p><strong>Kilometers:</strong> ${Number(car.CarKilometers).toLocaleString()} km</p>`);
     if (car.CarPlate) details.push(`<p><strong>Plate:</strong> ${car.CarPlate}</p>`);
     
+    // card.innerHTML = `
+    //     <img src="${car.CarImage || '../../../Assets/image/car_temp.png'}" alt="${carName}" class="car-image" onerror="this.src='../../../Assets/image/car_temp.png'">
+    //     <div class="car-content">
+    //         <h3 class="car-title">${carName}</h3>
+    //         <div class="car-details">
+    //             ${details.join('')}
+    //             <p><strong>Status:</strong> <span class="car-status status-${car.status || 'available'}">${car.status || 'available'}</span></p>
+    //             <p><strong>Stock:</strong> ${car.in_stock || 1} available</p>
+    //         </div>
+    //         <div class="car-price">$${car.price?.toLocaleString() || 'N/A'}</div>
+    //         <div class="car-description">
+    //             <p>Quality ${car.CarBrand} ${car.CarModel} with excellent condition and performance.</p>
+    //         </div>
+    //         <div class="car-actions">
+    //             <button class="btn btn-primary btn-small" onclick="viewCarDetails('${car.id}')">
+    //                 View Details
+    //             </button>
+    //             <button class="btn btn-link btn-small" onclick="addToCartHandler('${car.id}')" ${car.in_stock <= 0 ? 'disabled' : ''}>
+    //                 ${car.in_stock <= 0 ? 'Out of Stock' : 'Add to Cart'}
+    //             </button>
+    //         </div>
+    //     </div>
+    // `;
     card.innerHTML = `
         <img src="${car.CarImage || '../../../Assets/image/car_temp.png'}" alt="${carName}" class="car-image" onerror="this.src='../../../Assets/image/car_temp.png'">
         <div class="car-content">
             <h3 class="car-title">${carName}</h3>
             <div class="car-details">
-                ${details.join('')}
+
                 <p><strong>Status:</strong> <span class="car-status status-${car.status || 'available'}">${car.status || 'available'}</span></p>
-                <p><strong>Stock:</strong> ${car.in_stock || 1} available</p>
             </div>
             <div class="car-price">$${car.price?.toLocaleString() || 'N/A'}</div>
             <div class="car-description">

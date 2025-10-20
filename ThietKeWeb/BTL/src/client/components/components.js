@@ -14,7 +14,8 @@ function getCorrectPath() {
             about: 'src/client/about-us/about-us.html',
             contact: 'src/client/contact-us/contact-us.html',
             login: 'src/client/login-register/login.html',
-            register: 'src/client/login-register/register.html'
+            register: 'src/client/login-register/register.html',
+            logo: 'Assets/image/logoxe.jpg'
         };
     }
     // If we're in client subdirectories
@@ -26,7 +27,8 @@ function getCorrectPath() {
             about: '../about-us/about-us.html',
             contact: '../contact-us/contact-us.html',
             login: '../login-register/login.html',
-            register: '../login-register/register.html'
+            register: '../login-register/register.html',
+            logo: '../../../Assets/image/logoxe.jpg'
         };
     }
     // If we're in admin subdirectories
@@ -62,13 +64,15 @@ function createNavbar() {
     return `
         <nav class="site-header">
             <div class="container">
-                <div class="brand">
+                <div class="brand" style="white-space: nowrap;">
+                
                     <a href="${paths.home}" style="text-decoration: none; color: inherit;">
-                        🚗 Car Management
+                    <img src="${paths.logo}" alt="404 not found" width="100px" style="border-radius:30px;"/>
+                         Car Management
                     </a>
                 </div>
                 
-                <ul class="nav-list">
+                <ul class="nav-list" style="white-space: nowrap;">
                     <li><a href="${paths.home}" class="nav-link">Home</a></li>
                     <li><a href="${paths.cars}" class="nav-link">Cars</a></li>
                     <li><a href="${paths.services}" class="nav-link">Services</a></li>
@@ -76,7 +80,7 @@ function createNavbar() {
                     <li><a href="${paths.contact}" class="nav-link">Contact</a></li>
                 </ul>
                 
-                <div class="auth-actions" id="auth-actions">
+                <div class="auth-actions" id="auth-actions" style="white-space: nowrap;">
                     <!-- Auth buttons will be dynamically inserted here -->
                 </div>
             </div>
@@ -94,16 +98,16 @@ function createSidebar() {
             <nav class="sidebar-nav">
                 <ul>
                     <li><a href="../dashboard/dashboard.html" class="sidebar-link">
-                        📊 Dashboard
+                        <i class="fa-solid fa-chart-line"> Dashboard
                     </a></li>
                     <li><a href="../manage-user/manage-user.html" class="sidebar-link">
-                        👥 Manage Users
+                        <i class="fa-solid fa-user-group"></i> Manage Users
                     </a></li>
                     <li><a href="../manage-admin/manage-admin.html" class="sidebar-link">
-                        🔧 Manage Admins
+                        <i class="fa-solid fa-wrench"></i> Manage Admins
                     </a></li>
                     <li><a href="../../../index.html" class="sidebar-link">
-                        🏠 Back to Site
+                        <i class="fa-solid fa-house"></i> Back to Site
                     </a></li>
                 </ul>
             </nav>
@@ -134,9 +138,9 @@ function createFooter() {
                     </div>
                     <div class="footer-section">
                         <h4>Contact Info</h4>
-                        <p>📧 info@carmanagement.com</p>
-                        <p>📞 +1 (555) 123-4567</p>
-                        <p>📍 123 Car Street, Auto City</p>
+                        <p><i class="fa-solid fa-id-badge"></i> info@carmanagement.com</p>
+                        <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fa-solid fa-map-pin"></i> 123 Car Street, Auto City</p>
                     </div>
                 </div>
                 <div class="footer-bottom">
