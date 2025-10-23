@@ -29,6 +29,7 @@ body {
 .site-header {
     position: sticky;
     top: 0;
+	left: 0;
     background: var(--color-bg);
     color: var(--color-text);
     border-bottom: 2px solid var(--color-border);
@@ -39,7 +40,7 @@ body {
 .site-header .container { 
 	display: flex; 
 	align-items: center; 
-	justify-content: space-between; 
+	justify-content: left; 
 	gap: var(--spacing-6);
 	padding: var(--spacing-4) 0;
 }
@@ -53,7 +54,7 @@ body {
 .nav-list { 
 	list-style: none; 
 	display: flex; 
-	gap: var(--spacing-6); 
+	gap: var(--spacing-4); 
 	margin: 0; 
 	padding: 0; 
 
@@ -62,7 +63,7 @@ body {
 .nav-link { 
 	text-decoration: none; 
 	color: var(--color-text); 
-	padding: var(--spacing-3) var(--spacing-4); 
+	padding: var(--spacing-1) var(--spacing-2); 
 	border-radius: var(--radius);
 	border: 2px solid transparent;
 	transition: var(--transition);

@@ -65,7 +65,6 @@ function createNavbar() {
         <nav class="site-header">
             <div class="container">
                 <div class="brand" style="white-space: nowrap;">
-                
                     <a href="${paths.home}" style="text-decoration: none; color: inherit;">
                     <img src="${paths.logo}" alt="404 not found" width="100px" style="border-radius:30px;"/>
                          Car Management
