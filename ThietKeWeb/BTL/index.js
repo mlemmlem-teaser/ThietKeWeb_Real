@@ -199,3 +199,159 @@ if (adviseForm) adviseForm.addEventListener("submit", function(event) {
   this.reset();
 });
 
+// Scroll progress
+(function(){
+  const progress = document.getElementById('scroll-progress');
+  const update = () => {
+    const doc = document.documentElement;
+    const total = doc.scrollHeight - doc.clientHeight;
+    const scrolled = (window.scrollY / total) * 100;
+    progress.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+  };
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+
+// Counters (IntersectionObserver)
+(function(){
+  const counters = document.querySelectorAll('.stat-number');
+  if(!counters.length) return;
+  const runCount = el => {
+    const target = +el.dataset.target;
+    const duration = 1400; // total ms
+    const frame = 16;
+    let current = 0;
+    const step = Math.max(1, Math.round(target / (duration / frame)));
+    const interval = setInterval(() => {
+      current += step;
+      if(current >= target){
+        el.textContent = target;
+        clearInterval(interval);
+      } else el.textContent = current;
+    }, frame);
+  };
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        runCount(e.target);
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.6});
+  counters.forEach(c => io.observe(c));
+})();
+
+// Simple carousel control
+(function(){
+  const track = document.querySelector('.carousel-track');
+  const prev = document.querySelector('.carousel-prev');
+  const next = document.querySelector('.carousel-next');
+  if(!track) return;
+  const cardWidth = () => track.querySelector('.car-card').getBoundingClientRect().width + 20;
+  prev.addEventListener('click', () => {
+    track.scrollBy({left: -cardWidth(), behavior: 'smooth'});
+  });
+  next.addEventListener('click', () => {
+    track.scrollBy({left: cardWidth(), behavior: 'smooth'});
+  });
+})();
+
+// Testimonials auto-rotate
+(function(){
+  const items = document.querySelectorAll('.testimonial');
+  if(items.length < 2) return;
+  let idx = 0;
+  setInterval(() => {
+    items[idx].classList.remove('active');
+    idx = (idx + 1) % items.length;
+    items[idx].classList.add('active');
+  }, 4500);
+})();
+
+// Accordion FAQ
+(function(){
+  const btns = document.querySelectorAll('.accordion-btn');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.nextElementSibling;
+      const open = panel.style.display === 'block';
+      document.querySelectorAll('.accordion-panel').forEach(p => p.style.display = 'none');
+      if(!open) panel.style.display = 'block';
+    });
+  });
+})();
+
+// Reveal on scroll for nice micro-animations
+(function(){
+  const revealEls = document.querySelectorAll('.card, .feature-card, .car-card, .blog-card, .timeline li');
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('reveal');
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.15});
+  revealEls.forEach(e => io.observe(e));
+})();
+
+// Newsletter sample handler (prevent reload)
+document.getElementById('newsletter-form')?.addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert('Cảm ơn! Chúng tôi đã nhận email của bạn (mẫu).');
+});
+// small helper: khi stat-number đạt target -> thêm class icon-done
+(function(){
+  const checks = [];
+  document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+    const target = +el.dataset.target;
+    // poll nhẹ nhàng, clear khi đạt target
+    const id = setInterval(() => {
+      const val = Number(el.textContent.toString().replace(/,/g,'')) || 0;
+      if(val >= target) {
+        const icon = el.closest('.stat')?.querySelector('.stat-icon');
+        if(icon) icon.classList.add('icon-done');
+        clearInterval(id);
+      }
+    }, 180);
+    checks.push(id);
+  });
+
+  // optional: clear all checks after 10s to avoid infinite polling
+  setTimeout(() => checks.forEach(i => clearInterval(i)), 10000);
+})();
+// Process steps: reveal + progressive active state
+(function(){
+  const section = document.getElementById('services');
+  if(!section) return;
+  const stepsWrap = section.querySelector('.process-steps');
+  if(!stepsWrap) return;
+
+  // when section enters view -> add .active (reveal)
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(en => {
+      if(en.isIntersecting) {
+        stepsWrap.classList.add('active');
+
+        // progressive activation: mark step completed then next becomes active
+        const steps = Array.from(stepsWrap.querySelectorAll('.step'));
+        steps.forEach(s => s.classList.remove('active','completed'));
+
+        // small staged timeline
+        steps.forEach((s, i) => {
+          setTimeout(() => {
+            // mark previous as completed
+            if(i > 0) steps[i-1].classList.add('completed');
+            // mark current as active
+            s.classList.add('active');
+            // after a short interval make current completed too
+            setTimeout(() => s.classList.add('completed'), 900);
+          }, i * 700); // 700ms between step activations
+        });
+
+        obs.unobserve(en.target);
+      }
+    });
+  }, {threshold: 0.25});
+  io.observe(section);
+})();

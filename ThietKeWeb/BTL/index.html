@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Car Management System - Home</title>
+	<title>Hệ Thống Quản Lý Xe - Trang Chủ</title>
 	<link rel="stylesheet" href="bootstrap-css.css" />
 	<link rel="stylesheet" href="global-style.css" />
 	<link rel="stylesheet" href="index.css" />
@@ -13,56 +13,193 @@
 <body>
 	<div id="site-header"></div>
 	<main class="site-main">
-		<!-- Hero Section -->
-		<section class="hero-section">
-			<div class="container">
-				<div class="hero-content">
-					<h1><i class="fa-solid fa-car-side"></i> Car Management System</h1>
-					<p>Professional car management solution for your business needs</p>
-					<div class="hero-actions">
-						<a href="src/client/product/product.html" class="btn btn-primary">View Cars</a>
-						<a href="src/client/login-register/login.html" class="btn btn-link">Login</a>
-					</div>
-				</div>
-				<div class="hero-image">
-					<!-- imageholder -->
-					<img src="../BTL/Assets/image/lexus-es_orig.png" alt="Car Management">
-				</div>
-			</div>
-		</section>
+  <!-- Scroll progress -->
+  <div id="scroll-progress" aria-hidden="true"></div>
 
-		<!-- Features Section -->
-		<section class="features-section">
-			<div class="container">
-				<h2>Key Features</h2>
-				<div class="features-grid">
-					<div class="feature-card">
-						<div class="feature-icon"><i class="fa-solid fa-car-side"></i></div>
-						<h3>Car Inventory</h3>
-						<p>Manage your car inventory with detailed information and status tracking.</p>
-					</div>
-					<div class="feature-card">
-						<div class="feature-icon"><i class="fa-solid fa-user-group"></i></div>
-						<h3>User Management</h3>
-						<p>Control user access and permissions with role-based administration.</p>
-					</div>
-					<div class="feature-card">
-						<div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
-						<h3>Analytics Dashboard</h3>
-						<p>Get insights into your business with comprehensive reporting tools.</p>
-					</div>
-					<div class="feature-card">
-						<div class="feature-icon"><i class="fa-solid fa-wrench"></i></div>
-						<h3>Service Management</h3>
-						<p>Track maintenance schedules and service history for all vehicles.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
+  <!-- Hero Section (1 screen) -->
+  <section class="hero-section fullscreen-80" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1><i class="fa-solid fa-car-side"></i> Hệ Thống Quản Lý Xe</h1>
+        <p>Giải pháp quản lý xe chuyên nghiệp cho nhu cầu kinh doanh của bạn</p>
+        <div class="hero-actions">
+          <a href="src/client/product/product.html" class="btn btn-primary">Xem Xe</a>
+          <a href="src/client/login-register/login.html" class="btn btn-link">Đăng Nhập</a>
+        </div>
+        <div class="scroll-hint">Kéo xuống để khám phá</div>
+      </div>
+      <div class="hero-image">
+        <img src="../BTL/Assets/image/lexus-es_orig.png" alt="Quản Lý Xe" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Showroom Carousel (3rd screen) -->
+  <section class="showroom-section fullscreen-80" id="showroom">
+    <div class="container">
+      <h2>Xe nổi bật</h2>
+      <div class="carousel" id="car-carousel" aria-roledescription="carousel">
+        <button class="carousel-prev" aria-label="Previous">&lt;</button>
+        <div class="carousel-track">
+          <!-- 6 items để tăng chiều dài trang -->
+          <article class="car-card">
+            <img src="../BTL/Assets/image/car_temp.png" alt="Lexus 1" loading="lazy">
+            <h4>Lexus ES 250</h4>
+            <p>2024 · Sedan · Tình trạng: Mới</p>
+          </article>
+          <article class="car-card">
+            <img src="../BTL/Assets/image/car_temp.png" alt="Toyota 2" loading="lazy">
+            <h4>Toyota Corolla</h4>
+            <p>2023 · Hatchback · Trưng bày</p>
+          </article>
+          <article class="car-card">
+            <img src="../BTL/Assets/image/car_temp.png" alt="BMW 3" loading="lazy">
+            <h4>BMW 320i</h4>
+            <p>2022 · Sedan · Đã kiểm tra</p>
+          </article>
+          <article class="car-card">
+            <img src="../BTL/Assets/image/car_temp.png" alt="Mercedes 4" loading="lazy">
+            <h4>Mercedes C200</h4>
+            <p>2024 · Sedan · Mới về</p>
+          </article>
+          <article class="car-card">
+            <img src="../BTL/Assets/image/car_temp.png" alt="Honda 5" loading="lazy">
+            <h4>Honda Civic</h4>
+            <p>2021 · Sedan · Giá tốt</p>
+          </article>
+          <article class="car-card">
+            <img src="../BTL/Assets/image/car_temp.png" alt="Ford 6" loading="lazy">
+            <h4>Ford Ranger</h4>
+            <p>2023 · Pickup · Sẵn có</p>
+          </article>
+        </div>
+        <button class="carousel-next" aria-label="Next">&gt;</button>
+      </div>
+    </div>
+  </section>
+  <hr>
+
+  <!-- Services Timeline (4th screen) -->
+  <section class="timeline-section fullscreen-80" id="services">
+    <div class="container">
+		<div class="process-steps" aria-label="Quy trình dịch vụ">
+  <div class="step" data-step="1" role="img" aria-label="Bước 1: Lịch">
+    <div class="step-icon"><i class="fa-solid fa-calendar" aria-hidden="true"></i></div>
+    <div class="step-label">Lịch</div>
+  </div>
+  <div class="connector" aria-hidden="true"></div>
+
+  <div class="step" data-step="2" role="img" aria-label="Bước 2: Kiểm tra">
+    <div class="step-icon"><i class="fa-solid fa-check-circle" aria-hidden="true"></i></div>
+    <div class="step-label">Kiểm tra</div>
+  </div>
+  <div class="connector" aria-hidden="true"></div>
+
+  <div class="step" data-step="3" role="img" aria-label="Bước 3: Danh sách">
+    <div class="step-icon"><i class="fa-solid fa-list" aria-hidden="true"></i></div>
+    <div class="step-label">Danh sách</div>
+  </div>
+  <div class="connector" aria-hidden="true"></div>
+
+  <div class="step" data-step="4" role="img" aria-label="Bước 4: Hoàn thành">
+    <div class="step-icon"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i></div>
+    <div class="step-label">Hoàn thành</div>
+  </div>
+</div>
+      <h2>Quy trình dịch vụ</h2>
+      <ol class="timeline">
+        <li><strong>Đặt lịch</strong><span> – Khách hàng chọn ngày giờ</span></li>
+        <li><strong>Kiểm tra</strong><span> – Nhân viên kiểm tra tổng quan</span></li>
+        <li><strong>Bảo trì</strong><span> – Thực hiện theo danh sách công việc</span></li>
+        <li><strong>Bàn giao</strong><span> – Gửi báo cáo và hoá đơn</span></li>
+      </ol>
+    </div>
+  </section>
+<hr>
+  <!-- Quick Stats (2nd screen) -->
+  <h2 style="margin: 10% 0 2% 0;text-align: center; ">Biểu đồ doanh thu hàng tháng</h2>
+  <img src="../BTL/Assets/image/chart.webp" style="width: 60%; margin: 0 20%; border: 2px black solid; border-radius: 40px; padding: 5%;" alt="">
+  <section class="stats-section fullscreen-50" id="stats">
+    <div class="container stats-grid">
+  <div class="stat card">
+    <div class="stat-icon"><i class="fa-solid fa-car-side" aria-hidden="true"></i></div>
+    <h3 class="stat-number" data-target="1248">0</h3>
+    <p>Xe đang quản lý</p>
+  </div>
+
+  <div class="stat card">
+    <div class="stat-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
+    <h3 class="stat-number" data-target="324">0</h3>
+    <p>Khách hàng</p>
+  </div>
+
+  <div class="stat card">
+    <div class="stat-icon"><i class="fa-solid fa-wrench" aria-hidden="true"></i></div>
+    <h3 class="stat-number" data-target="98">0</h3>
+    <p>Trung tâm bảo trì</p>
+  </div>
+
+  <div class="stat card">
+    <div class="stat-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+    <h3 class="stat-number" data-target="5">0</h3>
+    <p>Chi nhánh quốc gia</p>
+  </div>
+  <h2>Khách hàng nói gì</h2>
+      <div class="testimonials">
+        <blockquote class="testimonial active">"Dịch vụ nhanh, chuyên nghiệp. Hệ thống dễ quản lý." <cite>— Minh, Doanh nghiệp vận tải</cite></blockquote>
+        <blockquote class="testimonial">"Bảo trì đúng hẹn, báo cáo chi tiết." <cite>— Hạnh, Cửa hàng xe</cite></blockquote>
+        <blockquote class="testimonial">"Giao diện rõ ràng, dễ thao tác." <cite>— Tuấn, Chủ đội xe</cite></blockquote>
+      </div>
+</div>
+  </section>
+ <hr>
+  <!-- FAQ + Blog Preview (6th screen) -->
+  <section class="faq-blog-section fullscreen-50" id="faq">
+    <div class="container two-col">
+      <div class="faq">
+        <h2>FAQ</h2>
+        <div class="accordion">
+          <button class="accordion-btn">Làm sao để đăng ký dịch vụ?</button>
+          <div class="accordion-panel">Bạn có thể đăng ký qua form hoặc gọi hotline.</div>
+          <button class="accordion-btn">Hệ thống có hỗ trợ di chuyển dữ liệu không?</button>
+          <div class="accordion-panel">Có — chúng tôi hỗ trợ import từ file CSV.</div>
+          <button class="accordion-btn">Bảo mật dữ liệu thế nào?</button>
+          <div class="accordion-panel">Mã hoá, phân quyền, backup định kỳ.</div>
+        </div>
+      </div>
+      <div class="blog-preview">
+        <h2>Tin tức & Mẹo</h2>
+        <article class="blog-card">
+          <h4>5 bước kiểm tra xe trước khi giao</h4>
+          <p>Danh sách kiểm tra nhanh giúp giảm rủi ro sau khi giao xe...</p>
+          <a href="#" class="btn btn-link">Đọc tiếp</a>
+        </article>
+        <article class="blog-card">
+          <h4>Cách tối ưu chi phí bảo trì</h4>
+          <p>Mẹo lên lịch và chọn vật tư phù hợp...</p>
+          <a href="#" class="btn btn-link">Đọc tiếp</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter & CTA (7th screen) -->
+  <section class="cta-section fullscreen-50" id="cta">
+    <div class="container cta-card card">
+      <h2>Nhận bản tin & Ưu đãi</h2>
+      <p>Đăng ký để nhận thông tin xe mới, khuyến mãi và mẹo bảo trì.</p>
+      <form id="newsletter-form" class="newsletter-form">
+        <input type="email" class="form-input" placeholder="Email của bạn" required>
+        <button class="btn btn-primary" type="submit">Đăng ký</button>
+      </form>
+    </div>
+  </section>
+  
+</main>
+
 	<div id="site-footer"></div>
 	<script src="src/client/components/components.js"></script>
 	<script src="index.js"></script>
 </body>
 </html>
-

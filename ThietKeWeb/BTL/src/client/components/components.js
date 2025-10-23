@@ -73,15 +73,15 @@ function createNavbar() {
                 </div>
                 
                 <ul class="nav-list" style="white-space: nowrap;">
-                    <li><a href="${paths.home}" class="nav-link">Home</a></li>
-                    <li><a href="${paths.cars}" class="nav-link">Cars</a></li>
-                    <li><a href="${paths.services}" class="nav-link">Services</a></li>
-                    <li><a href="${paths.about}" class="nav-link">About</a></li>
-                    <li><a href="${paths.contact}" class="nav-link">Contact</a></li>
+                    <li><a href="${paths.home}" class="nav-link">Trang chủ</a></li>
+                    <li><a href="${paths.cars}" class="nav-link">Danh mục xe</a></li>
+                    <li><a href="${paths.services}" class="nav-link">Dịch vụ</a></li>
+                    <li><a href="${paths.about}" class="nav-link">Về chúng tôi</a></li>
+                    <li><a href="${paths.contact}" class="nav-link">Liên hệ</a></li>
                 </ul>
                 
                 <div class="auth-actions" id="auth-actions" style="white-space: nowrap;">
-                    <!-- Auth buttons will be dynamically inserted here -->
+                    
                 </div>
             </div>
         </nav>
@@ -124,27 +124,27 @@ function createFooter() {
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-section">
-                        <h4>Car Management System</h4>
-                        <p>Professional car management solution for your business needs.</p>
+                        <h4>Hệ thống Quản lý Xe</h4>
+                        <p>Giải pháp quản lý xe chuyên nghiệp cho nhu cầu kinh doanh của bạn.</p>
                     </div>
                     <div class="footer-section">
-                        <h4>Quick Links</h4>
+                        <h4>Liên kết Nhanh</h4>
                         <ul>
-                            <li><a href="${paths.home}">Home</a></li>
-                            <li><a href="${paths.cars}">Cars</a></li>
-                            <li><a href="${paths.services}">Services</a></li>
-                            <li><a href="${paths.about}">About Us</a></li>
+                            <li><a href="${paths.home}">Trang Chủ</a></li>  
+                            <li><a href="${paths.cars}">Xe</a></li>
+                            <li><a href="${paths.services}">Dịch Vụ</a></li>
+                            <li><a href="${paths.about}">Về Chúng Tôi</a></li>
                         </ul>
                     </div>
                     <div class="footer-section">
-                        <h4>Contact Info</h4>
+                        <h4>Thông Tin Liên Hệ</h4>
                         <p><i class="fa-solid fa-id-badge"></i> info@carmanagement.com</p>
                         <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
-                        <p><i class="fa-solid fa-map-pin"></i> 123 Car Street, Auto City</p>
+                        <p><i class="fa-solid fa-map-pin"></i> 123 Đường Xe, Thành Phố Tự Động</p>
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2024 Car Management System. All rights reserved.</p>
+                    <p>&copy; 2024 Hệ thống Quản lý Xe. Tất cả quyền được bảo lưu.</p>
                 </div>
             </div>
         </footer>
@@ -159,12 +159,12 @@ function createAuthButtons() {
     if (user) {
         return `
             <span class="user-info">Welcome, ${user.email}</span>
-            <a href="#" class="btn btn-link" onclick="logout()">Logout</a>
+            <a href="#" class="btn btn-link" onclick="logout()">Đăng xuất</a>
         `;
     } else {
         return `
-            <a href="${paths.login}" class="btn btn-link">Login</a>
-            <a href="${paths.register}" class="btn btn-primary">Register</a>
+            <a href="${paths.login}" class="btn btn-link">Đăng nhập</a>
+            <a href="${paths.register}" class="btn btn-primary">Đăng ký</a>
         `;
     }
 }

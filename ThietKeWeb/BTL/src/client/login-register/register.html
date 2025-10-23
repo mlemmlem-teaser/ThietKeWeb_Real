@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Car Management</title>
+    <title>Hệ Thống Quản Lý Xe - Đăng ký</title>
     <link rel="stylesheet" href="../../../bootstrap-css.css">
     <link rel="stylesheet" href="../../../global-style.css">
     <link rel="stylesheet" href="register.css">
@@ -19,62 +19,62 @@
             <div class="auth-container">
                 <div class="auth-card">
                     <div class="auth-header">
-                        <h1>    <i class="fa-solid fa-car-side"></i> Register</h1>
-                        <p>Create your Car Management account</p>
+                        <h1>    <i class="fa-solid fa-car-side"></i> Đăng ký</h1>
+                        <p>Tạo tài khoản Quản Lý Xe của bạn</p>
                     </div>
                     
                     <form id="registerForm" class="auth-form">
                         <div class="form-group">
-                            <label for="fullname" class="form-label">Full Name</label>
+                            <label for="fullname" class="form-label">Họ và Tên</label>
                             <input type="text" id="fullname" name="fullname" class="form-input" required>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" id="username" name="username" class="form-input" placeholder="Choose a unique username" required>
+                                <label for="username" class="form-label">Tên người dùng</label>
+                                <input type="text" id="username" name="username" class="form-input" placeholder="Chọn tên người dùng duy nhất" required>
                             </div>
                             
                             <div class="form-group">
-                                <label for="email" class="form-label">Email Address</label>
+                                <label for="email" class="form-label">Địa chỉ Email</label>
                                 <input type="email" id="email" name="email" class="form-input" required>
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="avatar" class="form-label">Avatar URL (Optional)</label>
+                            <label for="avatar" class="form-label">URL Ảnh đại diện (Tùy chọn)</label>
                             <input type="url" id="avatar" name="avatar" class="form-input" placeholder="https://example.com/avatar.jpg">
                         </div>
                         
                         <div class="form-group">
-                            <label for="password" class="form-label">Password</label>
+                            <label for="password" class="form-label">Mật khẩu</label>
                             <input type="password" id="password" name="password" class="form-input" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <label for="confirmPassword" class="form-label">Xác nhận Mật khẩu</label>
                             <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="role" class="form-label">Account Type</label>
+                            <label for="role" class="form-label">Loại tài khoản</label>
                             <select id="role" name="role" class="form-input" required>
-                                <option value="user">Regular User</option>
+                                <option value="user">Người dùng thông thường</option>
                             </select>
                             <small style="color: var(--color-muted); font-size: 0.9rem;">
-                                Admin accounts can only be created by existing administrators.
+                                Tài khoản quản trị chỉ có thể được tạo bởi các quản trị viên hiện có.
                             </small>
                         </div>
                         
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary auth-btn">
-                                Create Account
+                                Tạo Tài khoản
                             </button>
                         </div>
                         
                         <div class="auth-links">
-                            <p>Already have an account? 
-                                <a href="login.html" class="auth-link">Login here</a>
+                            <p>Đã có tài khoản? 
+                                <a href="login.html" class="auth-link">Đăng nhập tại đây</a>
                             </p>
                         </div>
                     </form>
