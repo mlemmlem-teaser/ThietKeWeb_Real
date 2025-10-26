@@ -1,7 +1,29 @@
+.site-main {
+  text-align: center;
+}
 .team-grid {
-    display: flex;
-    justify-self: space-around;
+  display: flex;
+  justify-self: space-around;
 }
 .team-grid .team-member img {
-    width: 80%;
+  width: 80%;
+  height: 75%;
+}
+.content-image {
+  display: flex;
+}
+.content-image div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-image img {
+  width: 99%;
+  margin: 0 1%;
+  border: 1px black dashed;
+  border-radius: 8px;
+}
+h2,h3 {
+    margin-top: 5%;
 }
